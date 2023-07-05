@@ -39,15 +39,15 @@ function App() {
             <div className="md:w-1/2 w-full">
               <h2 className="leading-none font-bold text-2xl xs:text-2x1 md:text-5xl lg:6x1 uppercase text-neutral-900">
                 Grow your business faster with{" "}
-                <span className="text-blue-400">Demo POS software</span>
+                <span className="text-blue-400">MyBizz </span>
               </h2>
               <p className="mt-12 mb-12 text-neutral-900">
-                Demo POS is the leading POS software in Kenya, with everything
+              MyBizz is the leading POS software in Kenya, with everything
                 you need to run & grow your business.
               </p>
               <a href="#form">
                 <button className="px-16 rounded-full bg-blue-400 text-white font-bold p-4 uppercase border-blue-500 border">
-                  Request Demo
+                  Contact Us
                 </button>
               </a>
             </div>
@@ -158,7 +158,6 @@ function App() {
                 </div>
               </div>
               <button
-
                 type="submit"
                 className="mt-5 rounded-md bg-sky-600 px-10 py-2 text-white"
               >
