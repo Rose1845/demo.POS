@@ -8,7 +8,7 @@ function Benefits() {
         <div className="container m-auto px-6 space-y-8 text-gray-500 md:px-12">
           <div>
             <span className="text-gray-900 text-2xl font-bold">
-              Benefits of our Point of Sale
+              Benefits of MyBizz
             </span>
             <h2 className="mt-4 text-xl text-gray-600 font-semibold md:text-4xl">
               Guaranteed to save you time, increase the accuracy of your

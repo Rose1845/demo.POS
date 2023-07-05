@@ -8,6 +8,7 @@ function App() {
   const [text, setText] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [phone, setPhone] = React.useState("");
+  const [day, setDay] = React.useState("");
 
   
    
@@ -42,7 +43,7 @@ function App() {
                 <span className="text-blue-400">MyBizz </span>
               </h2>
               <p className="mt-12 mb-12 text-neutral-900">
-              MyBizz is the leading POS software in Kenya, with everything
+              MyBizz is the leading business solution in Kenya, with everything
                 you need to run & grow your business.
               </p>
               <a href="#form">
@@ -141,6 +142,36 @@ function App() {
                   />
                   <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">
                     Your phone number
+                  </label>
+                </div>
+                <div className="relative z-0">
+                {/* <input
+                    type="text"
+                    value={day}
+                    onChange={(e) => setDay(e.target.value)}
+                    name="day"
+                    className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
+                    placeholder=" "
+                  />
+                  <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">
+                    Day of Consoltation
+                  </label> */}
+                  {/* select day */}
+                  <select
+                    name="day"
+                    value={day}
+                    onChange={(e) => setDay(e.target.value)}
+                    className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
+                  >
+                    <option value="day">Day</option>
+                    <option value="monday">monday</option>
+                    <option value="tuesday">tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                  </select>
+                  <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">
+                    Select Consoltation Day
                   </label>
                 </div>
                 <div className="relative z-0 col-span-2">
