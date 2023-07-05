@@ -7,7 +7,7 @@ function Form() {
             <div className="w-[100vw] h-[100vh] px-3 sm:px-5 flex items-center justify-center absolute">
               <div className="w-full sm:w-1/2 lg:2/3 px-6 bg-gray-500 bg-opacity-20 bg-clip-padding backdrop-filter backdrop-blur-sm text-white z-50 py-4  rounded-lg">
                 <div className="w-full flex justify-center text-[#fff] text-xl mb:2 md:mb-5">
-                  Demo.POS
+                  MyBizz
                 </div>
                 <div className="mb-6">
                   <label

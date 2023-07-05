@@ -1,8 +1,35 @@
 import "./App.css";
+import React from "react";
 import Access from "./components/Access";
 import Benefits from "./components/Benefits";
-
+import axios from 'axios';
 function App() {
+  const [name, setName] = React.useState(""); // [state, setState
+  const [text, setText] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [phone, setPhone] = React.useState("");
+
+  
+   
+  const sendPostRequest = async () => {
+    try {
+      const response = await axios.post('http://localhost:3000/sms', {
+        text: text,
+        email: email,
+        phone: phone
+      });
+
+      console.log('Response:', response.data);
+    } catch (error) {
+      console.error('Error:', error.response.data);
+    }
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    sendPostRequest();
+  };
+
+  
   return (
     <>
       <div>
@@ -70,18 +97,18 @@ function App() {
 
         <div className="flex min-h-screen items-center justify-start bg-white">
           <div className="mx-auto w-full max-w-lg">
-            <h1 className="text-4xl font-medium">Request Demo</h1>
+            <h1 className="text-4xl font-medium">Contact Us.</h1>
 
-            <form action="https://api.web3forms.com/submit" className="mt-10">
-              <input
-                type="hidden"
-                name="access_key"
-                value="YOUR_ACCESS_KEY_HERE"
-              />
+            <form 
+            onSubmit={handleSubmit}
+             className="mt-10">
+             
               <div className="grid gap-6 sm:grid-cols-2">
                 <div className="relative z-0">
                   <input
                     type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     name="name"
                     className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
                     placeholder=" "
@@ -93,6 +120,8 @@ function App() {
                 <div className="relative z-0">
                   <input
                     type="text"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     name="email"
                     className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
                     placeholder=" "
@@ -104,6 +133,8 @@ function App() {
                 <div className="relative z-0">
                   <input
                     type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                     name="phone_number"
                     className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
                     placeholder=" "
@@ -115,6 +146,8 @@ function App() {
                 <div className="relative z-0 col-span-2">
                   <textarea
                     name="message"
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
                     rows="5"
                     className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
                     placeholder=" "
@@ -125,6 +158,7 @@ function App() {
                 </div>
               </div>
               <button
+
                 type="submit"
                 className="mt-5 rounded-md bg-sky-600 px-10 py-2 text-white"
               >
